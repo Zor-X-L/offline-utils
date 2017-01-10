@@ -18,13 +18,21 @@
 			<releases><enabled>false</enabled></releases>
 			<snapshots><enabled>true</enabled></snapshots>
 		</repository>
+		<repository>
+			<id>flink.staging.1111</id>
+			<name>Flink Staging Repository 1111</name>
+			<url>https://repository.apache.org/content/repositories/orgapacheflink-1111</url>
+			<releases><enabled>true</enabled></releases>
+			<snapshots><enabled>false</enabled></snapshots>
+		</repository>
 	</repositories>
 
 	<properties>
 		
-		<flink.version>1.0.3</flink.version>
+		<!-- <flink.version>1.0.3</flink.version> -->
 		<!-- <flink.version>1.1.4</flink.version> -->
 		<!-- <flink.version>1.2-SNAPSHOT</flink.version> -->
+		<flink.version>1.2.0</flink.version>
 
 		<!-- <scala.version>2.10</scala.version> -->
 		<scala.version>2.11</scala.version>
@@ -34,14 +42,14 @@
 	<dependencies>
 
 		<!-- 1.2 -->
-		<!-- <dependency>
+		<dependency>
 			<groupId>org.apache.flink</groupId>
 			<artifactId>flink-connector-kafka-0.10_${scala.version}</artifactId>
 			<version>${flink.version}</version>
-		</dependency> -->
+		</dependency>
 
 		<!-- 1.1 -->
-		<!-- <dependency>
+		<dependency>
 			<groupId>org.apache.flink</groupId>
 			<artifactId>flink-cep-scala_${scala.version}</artifactId>
 			<version>${flink.version}</version>
@@ -56,7 +64,8 @@
 			<artifactId>flink-connector-cassandra_${scala.version}</artifactId>
 			<version>${flink.version}</version>
 		</dependency>
-		<dependency>
+		<!-- flink-connector-redis was moved to bahir-flink in 1.2 -->
+		<!-- <dependency>
 			<groupId>org.apache.flink</groupId>
 			<artifactId>flink-connector-redis_${scala.version}</artifactId>
 			<version>${flink.version}</version>
@@ -90,11 +99,12 @@
 		</dependency>
 
 		<!-- flink-streaming-connectors -->
-		<dependency>
+		<!-- flink-connector-flume was moved to bahir-flink in 1.2 -->
+		<!-- <dependency>
 			<groupId>org.apache.flink</groupId>
 			<artifactId>flink-connector-flume_${scala.version}</artifactId>
 			<version>${flink.version}</version>
-		</dependency>
+		</dependency> -->
 		<dependency>
 			<groupId>org.apache.flink</groupId>
 			<artifactId>flink-connector-kafka-0.9_${scala.version}</artifactId>
