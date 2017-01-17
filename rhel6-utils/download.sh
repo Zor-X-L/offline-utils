@@ -1,4 +1,4 @@
-../repoquery-recursive.py \
+./repoquery-recursive.py \
 	tmux python-ipython-console python34 pssh clusterssh \
 	inxi lshw \
 	sysbench bonnie++ fio iperf3 \
