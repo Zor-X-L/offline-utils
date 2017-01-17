@@ -3,7 +3,8 @@ cp bbcp /usr/local/bin/ || exit 1
 
 chmod +x nmon16e_x86_rhel65 && \
 cp nmon16e_x86_rhel65 /usr/local/bin/ && \
-ln -s /usr/local/bin/nmon /usr/local/bin/nmon16e_x86_rhel65 || exit 1
+rm -f /usr/local/bin/nmon && \
+ln -s /usr/local/bin/nmon16e_x86_rhel65 /usr/local/bin/nmon || exit 1
 
 mkdir megacli && \
 cd megacli && \
