@@ -4,7 +4,7 @@
 	sysbench bonnie++ fio iperf3 \
 	collectl glances atop statgrab-tools \
 	htop iotop \
-	iptraf-ng nethogs iftop vnstat ntop jnettop ngrep nload | wget -i - \
+	iptraf-ng nethogs iftop vnstat jnettop ngrep nload | wget -i - \
 	|| exit 1
 
 rm -f *i686*.rpm

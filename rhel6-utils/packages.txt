@@ -52,7 +52,6 @@ nethogs
 iftop
 #arpwatch
 vnstat
-ntop
 #ss(iproute)
 jnettop
 #ethtool
