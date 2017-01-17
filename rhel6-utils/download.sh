@@ -7,6 +7,8 @@
 	iptraf-ng nethogs iftop vnstat ntop jnettop ngrep nload | wget -i - \
 	|| exit 1
 
+rm -f *i686*.rpm
+
 wget 'http://www.slac.stanford.edu/~abh/bbcp/bin/amd64_rhel60/bbcp' || exit 1
 
 wget 'https://downloads.sourceforge.net/project/nmon/nmon16e_x86_rhel65'||exit 1
