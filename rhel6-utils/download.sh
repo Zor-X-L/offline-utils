@@ -4,8 +4,9 @@
 	sysbench bonnie++ fio iperf3 \
 	collectl glances atop statgrab-tools \
 	htop iotop \
-	iptraf-ng nethogs iftop vnstat jnettop ngrep nload | wget -i - \
-	|| exit 1
+	iptraf-ng nethogs iftop vnstat jnettop ngrep nload \
+	rh-git29-git-all
+	| wget -i - || exit 1
 
 rm -f *i686*.rpm
 
