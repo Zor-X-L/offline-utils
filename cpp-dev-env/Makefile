@@ -1,46 +1,25 @@
 export PREFIX = $(HOME)/opt/cpp-dev-env
 
 .PHONY: prepare download install clean distclean \
-	download-gcc install-gcc clean-gcc distclean-gcc \
-	download-gdb install-gdb clean-gdb distclean-gdb
+	download-librdkafka install-librdkafka clean-librdkafka distclean-librdkafka
 
 prepare:
 	mkdir -p $(PREFIX)
-	echo PREFIX=$(PREFIX) > $(PREFIX)/enable.sh
-	cat enable.sh >> $(PREFIX)/enable.sh
+	rm -f $(PREFIX)/enable.sh
+	echo scl enable devtoolset-6 \'bash $(PREFIX)/_enable.sh\' > $(PREFIX)/enable.sh
+	chmod +x $(PREFIX)/enable.sh
+	rm -f $(PREFIX)/_enable.sh
+	echo PREFIX=$(PREFIX) > $(PREFIX)/_enable.sh
+	cat _enable.sh >> $(PREFIX)/_enable.sh
 	@echo use . $(PREFIX)/enable.sh to enable cpp-dev-env
 
-download: download-gcc download-gdb download-librdkafka
+download: download-librdkafka
 
-install: install-gcc install-gdb install-librdkafka
+install: install-librdkafka
 
-clean: clean-gcc clean-gdb clean-librdkafka
+clean: clean-librdkafka
 
-distclean: distclean-gcc distclean-gdb distclean-librdkafka
-
-download-gcc:
-	$(MAKE) -C gcc download
-
-install-gcc:
-	$(MAKE) -C gcc install
-
-clean-gcc:
-	$(MAKE) -C gcc clean
-
-distclean-gcc:
-	$(MAKE) -C gcc distclean
-
-download-gdb:
-	$(MAKE) -C gdb download
-
-install-gdb:
-	$(MAKE) -C gdb install
-
-clean-gdb:
-	$(MAKE) -C gdb clean
-
-distclean-gdb:
-	$(MAKE) -C gdb distclean
+distclean: distclean-librdkafka
 
 download-librdkafka:
 	$(MAKE) -C librdkafka download

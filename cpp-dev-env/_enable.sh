@@ -34,5 +34,12 @@ else
 	LIBRARY_PATH=$PREFIX/lib64:$PREFIX/lib:$LIBRARY_PATH
 fi
 
-export PATH LD_LIBRARY_PATH MANPATH INFOPATH CPATH LIBRARY_PATH
-export PS1="(cpp-dev-env) "$PS1
+if [ -z "$PKG_CONFIG_PATH" ]; then
+	PKG_CONFIG_PATH=$PREFIX/lib64/pkgconfig:$PREFIX/lib/pkgconfig
+else
+	PKG_CONFIG_PATH=$PREFIX/lib64/pkgconfig:$PREFIX/lib/pkgconfig:PKG_CONFIG_PATH
+fi
+
+export PATH LD_LIBRARY_PATH MANPATH INFOPATH CPATH LIBRARY_PATH PKG_CONFIG_PATH
+export PS1="(cpp-dev-env) [\u@\h \W]\$ "
+bash
