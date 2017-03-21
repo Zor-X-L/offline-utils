@@ -8,7 +8,7 @@ download:
 install:
 	tar -xf v$(VER).tar.gz
 	cd librdkafka-$(VER) && \
-		./configure --prefix=$(PREFIX) --libdir=$(PREFIX)/lib64 --enable-static
+		./configure --prefix=$(PREFIX) --enable-static
 	$(MAKE) -C librdkafka-$(VER)
 	$(MAKE) -C librdkafka-$(VER) install
 
@@ -16,4 +16,4 @@ clean:
 	rm -rf librdkafka-$(VER)
 
 distclean: clean
-	rm -f v$(VER).tar.xz
+	rm -f v$(VER).tar.gz
