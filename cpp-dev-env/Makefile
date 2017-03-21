@@ -1,7 +1,7 @@
 export PREFIX = $(HOME)/opt/cpp-dev-env
 
 .PHONY: prepare download install clean distclean \
-	download-librdkafka install-librdkafka clean-librdkafka distclean-librdkafka
+	download-% install-% clean-% distclean-%
 
 prepare:
 	mkdir -p $(PREFIX)
@@ -13,23 +13,23 @@ prepare:
 	cat _enable.sh >> $(PREFIX)/_enable.sh
 	@echo use . $(PREFIX)/enable.sh to enable cpp-dev-env
 
-download: download-librdkafka
+download: download-librdkafka download-poco
 
-install: install-librdkafka
+install: install-librdkafka install-poco
 
-clean: clean-librdkafka
+clean: clean-librdkafka clean-poco
 
-distclean: distclean-librdkafka
+distclean: distclean-librdkafka distclean-poco
 
-download-librdkafka:
-	$(MAKE) -C librdkafka download
+download-%:
+	$(MAKE) -C $(lastword $(subst -, ,$@)) download
 
-install-librdkafka:
-	$(MAKE) -C librdkafka install
+install-%:
+	$(MAKE) -C $(lastword $(subst -, ,$@)) install
 
-clean-librdkafka:
-	$(MAKE) -C librdkafka clean
+clean-%:
+	$(MAKE) -C $(lastword $(subst -, ,$@)) clean
 
-distclean-librdkafka:
-	$(MAKE) -C librdkafka distclean
+distclean-%:
+	$(MAKE) -C $(lastword $(subst -, ,$@)) distclean
 
