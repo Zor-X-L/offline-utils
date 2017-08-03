@@ -6,6 +6,7 @@
 	htop iotop \
 	iptraf-ng nethogs iftop vnstat jnettop ngrep nload \
 	rh-git29-git-all \
+	glibc-static devtoolset-6-gcc-c++ devtoolset-6-gdb \
 	| wget -Ni - || exit 1
 
 rm -f *i686*.rpm
