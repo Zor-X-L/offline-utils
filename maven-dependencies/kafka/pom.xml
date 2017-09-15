@@ -4,9 +4,9 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>cn.szse</groupId>
-	<artifactId>kafka-maven-dependencies</artifactId>
-	<version>1.0</version>
+	<groupId>maven_dependencies</groupId>
+	<artifactId>kafka</artifactId>
+	<version>20170823</version>
 	
 	<properties>
 
@@ -16,13 +16,21 @@
 		<!-- <kafka.version>0.8.2.2</kafka.version> -->
 		<!-- <kafka.version>0.9.0.1</kafka.version> -->
 		<!-- <kafka.version>0.10.0.1</kafka.version> -->
-		<kafka.version>0.10.1.1</kafka.version>
+		<!-- <kafka.version>0.10.1.1</kafka.version> -->
+		<kafka.version>0.10.2.1</kafka.version>
 
 	</properties>
 
 	<packaging>pom</packaging>
 
 	<dependencies>
+
+		<!-- 0.10.2 -->
+		<dependency>
+			<groupId>org.apache.kafka</groupId>
+			<artifactId>connect-transforms</artifactId>
+			<version>${kafka.version}</version>
+		</dependency>
 
 		<!-- 0.10 -->
 		<dependency>

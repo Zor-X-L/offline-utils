@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>maven_dependencies</groupId>
+	<artifactId>serializers</artifactId>
+	<version>20170713</version>
+
+	<packaging>pom</packaging>
+
+	<properties>
+		<jackson.version>2.7.4</jackson.version>
+		<msgpack.version>0.8.13</msgpack.version>
+		<protobuf.version>2.5.0</protobuf.version>
+		<flatbuffers.version>1.6.0.3</flatbuffers.version>
+		<protostuff.version>1.5.5</protostuff.version>
+	</properties>
+
+	<dependencies>
+
+		<!-- jackson -->
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-core</artifactId>
+			<version>${jackson.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+			<version>${jackson.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.fasterxml.jackson.dataformat</groupId>
+			<artifactId>jackson-dataformat-csv</artifactId>
+			<version>${jackson.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.fasterxml.jackson.dataformat</groupId>
+			<artifactId>jackson-dataformat-xml</artifactId>
+			<version>${jackson.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.codehaus.woodstox</groupId>
+			<artifactId>woodstox-core-asl</artifactId>
+			<version>4.4.1</version>
+		</dependency>
+
+		<!-- dsl-json -->
+		<dependency>
+			<groupId>com.dslplatform</groupId>
+			<artifactId>dsl-json-java8</artifactId>
+			<version>1.4.1</version>
+		</dependency>
+		<dependency>
+			<groupId>com.dslplatform</groupId>
+			<artifactId>dsl-json-processor</artifactId>
+			<version>1.4.6</version>
+		</dependency>
+
+		<!-- msgpack -->
+		<dependency>
+			<groupId>org.msgpack</groupId>
+			<artifactId>msgpack-core</artifactId>
+			<version>${msgpack.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.msgpack</groupId>
+			<artifactId>jackson-dataformat-msgpack</artifactId>
+			<version>${msgpack.version}</version>
+		</dependency>
+
+		<!-- opencsv -->
+		<dependency>
+			<groupId>com.opencsv</groupId>
+			<artifactId>opencsv</artifactId>
+			<version>3.9</version>
+		</dependency>
+
+		<!-- commons-csv -->
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-csv</artifactId>
+			<version>1.4</version>
+		</dependency>
+
+		<!-- univocity-parsers -->
+		<dependency>
+			<groupId>com.univocity</groupId>
+			<artifactId>univocity-parsers</artifactId>
+			<version>2.4.1</version>
+		</dependency>
+
+		<!-- protobuf -->
+		<dependency>
+			<groupId>com.google.protobuf</groupId>
+			<artifactId>protobuf-java</artifactId>
+			<version>${protobuf.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.google.protobuf</groupId>
+			<artifactId>protoc</artifactId>
+			<version>${protobuf.version}</version>
+			<classifier>windows-x86_32</classifier>
+			<type>exe</type>
+		</dependency>
+		<dependency>
+			<groupId>com.google.protobuf</groupId>
+			<artifactId>protoc</artifactId>
+			<version>${protobuf.version}</version>
+			<classifier>linux-x86_64</classifier>
+			<type>exe</type>
+		</dependency>
+
+		<!-- thrift -->
+		<dependency>
+			<groupId>org.apache.thrift</groupId>
+			<artifactId>libthrift</artifactId>
+			<version>0.10.0</version>
+		</dependency>
+
+		<!-- flatbuffers -->
+		<dependency>
+			<groupId>com.github.davidmoten</groupId>
+			<artifactId>flatbuffers-java</artifactId>
+			<version>${flatbuffers.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.github.davidmoten</groupId>
+			<artifactId>flatbuffers-compiler</artifactId>
+			<version>${flatbuffers.version}</version>
+			<classifier>distribution-windows</classifier>
+			<type>zip</type>
+		</dependency>
+		<dependency>
+			<groupId>com.github.davidmoten</groupId>
+			<artifactId>flatbuffers-compiler</artifactId>
+			<version>${flatbuffers.version}</version>
+			<classifier>distribution-linux</classifier>
+			<type>tar.gz</type>
+		</dependency>
+
+		<!-- kryo -->
+		<dependency>
+			<groupId>com.esotericsoftware.kryo</groupId>
+			<artifactId>kryo</artifactId>
+			<version>2.24.0</version>
+		</dependency>
+
+		<!-- protostuff -->
+		<dependency>
+			<groupId>io.protostuff</groupId>
+			<artifactId>protostuff-core</artifactId>
+			<version>${protostuff.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>io.protostuff</groupId>
+			<artifactId>protostuff-runtime-registry</artifactId>
+			<version>${protostuff.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>io.protostuff</groupId>
+			<artifactId>protostuff-compiler</artifactId>
+			<version>${protostuff.version}</version>
+		</dependency>
+
+	</dependencies>
+</project>
