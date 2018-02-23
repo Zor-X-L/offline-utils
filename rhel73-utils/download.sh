@@ -15,4 +15,4 @@ wget -N 'http://www.slac.stanford.edu/~abh/bbcp/bin/amd64_rhel60/bbcp' || exit 1
 #wget -N 'https://downloads.sourceforge.net/project/nmon/nmon16e_x86_rhel65'||exit 1
 wget -N 'https://downloads.sourceforge.net/project/nmon/nmon16g_x86.tar.gz'||exit 1
 
-wget -N 'https://docs.broadcom.com/docs-and-downloads/raid-controllers/raid-controllers-common-files/8-07-14_MegaCLI.zip' || exit 1
+#wget -N 'https://docs.broadcom.com/docs-and-downloads/raid-controllers/raid-controllers-common-files/8-07-14_MegaCLI.zip' || exit 1
