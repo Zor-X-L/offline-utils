@@ -33,15 +33,19 @@ def check_dep(packages):
 
 
 check_dep(sys.argv[1:])
-cmd = repoquery_self + sys.argv[1:]
+
+cmd = repoquery_self + sys.argv[1:] + list(package_info.keys())
+#print(cmd)
+
 output = subprocess.check_output(cmd).decode("utf-8")
+#print(output)
+
 wait_for_checking = []
 for line in output.split('\n'):
 	if len(line) == 0:
 		continue
 	(package_name, repoid, location) = line.split(' ')
-	if (repoid != 'InstallMedia' and 
-			package_name not in package_info):
+	if repoid != 'InstallMedia':
 		package_info[package_name] = (repoid, location)
 
 for package in package_info:
