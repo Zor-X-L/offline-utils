@@ -6,7 +6,7 @@
 
 	<groupId>maven_dependencies</groupId>
 	<artifactId>kafka</artifactId>
-	<version>20170823</version>
+	<version>20180330</version>
 	
 	<properties>
 
@@ -17,7 +17,10 @@
 		<!-- <kafka.version>0.9.0.1</kafka.version> -->
 		<!-- <kafka.version>0.10.0.1</kafka.version> -->
 		<!-- <kafka.version>0.10.1.1</kafka.version> -->
-		<kafka.version>0.10.2.1</kafka.version>
+		<!-- <kafka.version>0.10.2.1</kafka.version> -->
+		<kafka.version>0.11.0.2</kafka.version>
+		<!-- <kafka.version>1.0.1</kafka.version> -->
+		<!-- <kafka.version>1.1.0</kafka.version> -->
 
 	</properties>
 
@@ -25,31 +28,19 @@
 
 	<dependencies>
 
-		<!-- 0.10.2 -->
+		<!-- 0.8 -->
 		<dependency>
 			<groupId>org.apache.kafka</groupId>
-			<artifactId>connect-transforms</artifactId>
+			<artifactId>kafka-clients</artifactId>
 			<version>${kafka.version}</version>
 		</dependency>
-
-		<!-- 0.10 -->
 		<dependency>
 			<groupId>org.apache.kafka</groupId>
-			<artifactId>kafka-streams</artifactId>
+			<artifactId>kafka_${scala.version}</artifactId>
 			<version>${kafka.version}</version>
 		</dependency>
 
 		<!-- 0.9 -->
-		<dependency>
-			<groupId>org.apache.kafka</groupId>
-			<artifactId>kafka-log4j-appender</artifactId>
-			<version>${kafka.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.kafka</groupId>
-			<artifactId>kafka-tools</artifactId>
-			<version>${kafka.version}</version>
-		</dependency>
 		<dependency>
 			<groupId>org.apache.kafka</groupId>
 			<artifactId>connect-api</artifactId>
@@ -70,18 +61,29 @@
 			<artifactId>connect-json</artifactId>
 			<version>${kafka.version}</version>
 		</dependency>
-
-		<!-- 0.8 -->
 		<dependency>
 			<groupId>org.apache.kafka</groupId>
-			<artifactId>kafka_${scala.version}</artifactId>
+			<artifactId>kafka-log4j-appender</artifactId>
 			<version>${kafka.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.kafka</groupId>
-			<artifactId>kafka-clients</artifactId>
+			<artifactId>kafka-tools</artifactId>
 			<version>${kafka.version}</version>
 		</dependency>
 
+		<!-- 0.10 -->
+		<dependency>
+			<groupId>org.apache.kafka</groupId>
+			<artifactId>kafka-streams</artifactId>
+			<version>${kafka.version}</version>
+		</dependency>
+
+		<!-- 0.10.2 -->
+		<dependency>
+			<groupId>org.apache.kafka</groupId>
+			<artifactId>connect-transforms</artifactId>
+			<version>${kafka.version}</version>
+		</dependency>
 	</dependencies>
 </project>
